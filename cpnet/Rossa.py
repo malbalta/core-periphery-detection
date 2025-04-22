@@ -85,7 +85,7 @@ class Rossa(CPAlgorithm):
             # denom = np.asscalar(np.max([1, np.max(ak * (ak + deg))]))
             score = (2 * ak * (x.T * A) - bk * deg) / denom
 
-            score[x.T > 0] = np.Infinity
+            score[x.T > 0] = np.inf
             score = np.squeeze(np.asarray(score))
             idx = self._argmin2(score)
             x[idx] = 1
